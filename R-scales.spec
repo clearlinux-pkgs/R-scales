@@ -4,7 +4,7 @@
 #
 Name     : R-scales
 Version  : 0.4.1
-Release  : 32
+Release  : 33
 URL      : http://cran.r-project.org/src/contrib/scales_0.4.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/scales_0.4.1.tar.gz
 Summary  : Scale Functions for Visualization
@@ -44,9 +44,11 @@ lib components for the R-scales package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484548805
 
 %install
 rm -rf %{buildroot}
+export SOURCE_DATE_EPOCH=1484548805
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -56,7 +58,7 @@ export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library scales
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library scales
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
 export LANG=C
