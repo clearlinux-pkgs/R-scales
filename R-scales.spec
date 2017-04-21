@@ -4,18 +4,18 @@
 #
 Name     : R-scales
 Version  : 0.4.1
-Release  : 35
+Release  : 36
 URL      : http://cran.r-project.org/src/contrib/scales_0.4.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/scales_0.4.1.tar.gz
 Summary  : Scale Functions for Visualization
 Group    : Development/Tools
 License  : MIT
 Requires: R-scales-lib
-Requires: R-Rcpp
 Requires: R-RColorBrewer
+Requires: R-Rcpp
+Requires: R-dichromat
 Requires: R-labeling
 Requires: R-munsell
-Requires: R-dichromat
 Requires: R-plyr
 BuildRequires : R-RColorBrewer
 BuildRequires : R-Rcpp
@@ -43,12 +43,15 @@ lib components for the R-scales package.
 %setup -q -c -n scales
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1484548805
+export SOURCE_DATE_EPOCH=1492800714
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484548805
+export SOURCE_DATE_EPOCH=1492800714
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,7 +67,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library scales
 
@@ -75,6 +78,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/scales/INDEX
 /usr/lib64/R/library/scales/LICENSE
 /usr/lib64/R/library/scales/Meta/Rd.rds
+/usr/lib64/R/library/scales/Meta/features.rds
 /usr/lib64/R/library/scales/Meta/hsearch.rds
 /usr/lib64/R/library/scales/Meta/links.rds
 /usr/lib64/R/library/scales/Meta/nsInfo.rds
