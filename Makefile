@@ -1,5 +1,5 @@
 PKG_NAME := R-scales
-URL := http://cran.r-project.org/src/contrib/scales_0.4.1.tar.gz
+URL := https://cran.r-project.org/src/contrib/scales_0.5.0.tar.gz
 
 
 include ../common/Makefile.common
