@@ -4,21 +4,16 @@
 #
 Name     : R-scales
 Version  : 1.0.0
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Summary  : Scale Functions for Visualization
 Group    : Development/Tools
 License  : MIT
 Requires: R-scales-lib
-Requires: R-RColorBrewer
-Requires: R-Rcpp
-Requires: R-labeling
-Requires: R-munsell
-Requires: R-plyr
-Requires: R-viridisLite
 BuildRequires : R-RColorBrewer
 BuildRequires : R-Rcpp
+BuildRequires : R-dichromat
 BuildRequires : R-labeling
 BuildRequires : R-munsell
 BuildRequires : R-plyr
@@ -45,11 +40,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533826840
+export SOURCE_DATE_EPOCH=1533836167
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533826840
+export SOURCE_DATE_EPOCH=1533836167
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
