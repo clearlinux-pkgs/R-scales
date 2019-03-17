@@ -4,13 +4,13 @@
 #
 Name     : R-scales
 Version  : 1.0.0
-Release  : 63
+Release  : 64
 URL      : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
-Summary  : Scale Functions for Visualization
+Summary  : Tools for Splitting, Applying and Combining Data
 Group    : Development/Tools
 License  : MIT
-Requires: R-scales-lib
+Requires: R-scales-lib = %{version}-%{release}
 BuildRequires : R-RColorBrewer
 BuildRequires : R-Rcpp
 BuildRequires : R-dichromat
@@ -21,8 +21,12 @@ BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
 
 %description
-methods for automatically determining breaks and labels
-    for axes and legends.
+# Scales <img src="man/figures/logo.png" align="right" />
+[![Build
+Status](https://travis-ci.org/r-lib/scales.svg?branch=master)](https://travis-ci.org/r-lib/scales)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/r-lib/scales/master.svg)](https://codecov.io/github/r-lib/scales?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/scales)](https://cran.r-project.org/package=scales)
 
 %package lib
 Summary: lib components for the R-scales package.
@@ -40,11 +44,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533836167
+export SOURCE_DATE_EPOCH=1552846209
 
 %install
+export SOURCE_DATE_EPOCH=1552846209
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533836167
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,8 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library scales|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  scales || :
 
 
 %files
@@ -110,10 +113,29 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/scales/help/scales.rdx
 /usr/lib64/R/library/scales/html/00Index.html
 /usr/lib64/R/library/scales/html/R.css
-/usr/lib64/R/library/scales/libs/symbols.rds
+/usr/lib64/R/library/scales/tests/testthat.R
+/usr/lib64/R/library/scales/tests/testthat/test-alpha.r
+/usr/lib64/R/library/scales/tests/testthat/test-bounds.r
+/usr/lib64/R/library/scales/tests/testthat/test-breaks-extended.R
+/usr/lib64/R/library/scales/tests/testthat/test-breaks-log.r
+/usr/lib64/R/library/scales/tests/testthat/test-breaks-minor.r
+/usr/lib64/R/library/scales/tests/testthat/test-breaks.r
+/usr/lib64/R/library/scales/tests/testthat/test-colors.r
+/usr/lib64/R/library/scales/tests/testthat/test-colour-ramp.R
+/usr/lib64/R/library/scales/tests/testthat/test-discrete.R
+/usr/lib64/R/library/scales/tests/testthat/test-formatter.r
+/usr/lib64/R/library/scales/tests/testthat/test-manual-pal.R
+/usr/lib64/R/library/scales/tests/testthat/test-pal-hue.r
+/usr/lib64/R/library/scales/tests/testthat/test-range.r
+/usr/lib64/R/library/scales/tests/testthat/test-rescale.R
+/usr/lib64/R/library/scales/tests/testthat/test-round-any.R
+/usr/lib64/R/library/scales/tests/testthat/test-scale.r
+/usr/lib64/R/library/scales/tests/testthat/test-trans-date.r
+/usr/lib64/R/library/scales/tests/testthat/test-trans-numeric.r
+/usr/lib64/R/library/scales/tests/testthat/test-trans.r
+/usr/lib64/R/library/scales/tests/testthat/test-zero-range.r
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/scales/libs/scales.so
 /usr/lib64/R/library/scales/libs/scales.so.avx2
-/usr/lib64/R/library/scales/libs/scales.so.avx512

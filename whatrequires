@@ -1,15 +1,12 @@
 # This file contains recursive sources that require this package
 R-R6
-R-car
-R-chron
-R-dynlm
+R-bridgesampling
+R-cowplot
+R-drc
 R-ggplot2
-R-gtools
-R-lme4
-R-lmtest
-R-microbenchmark
-R-multcomp
-R-pbkrtest
-R-quantreg
-R-sandwich
-R-tis
+R-ggridges
+R-gridExtra
+R-pheatmap
+R-remote
+R-tidyverse
+R-vcdExtra
