@@ -1,5 +1,7 @@
 # This file contains recursive sources that require this package
+R-GGally
 R-R6
+R-SGP
 R-bridgesampling
 R-cowplot
 R-drc
@@ -8,5 +10,6 @@ R-ggridges
 R-gridExtra
 R-pheatmap
 R-remote
+R-seriation
 R-tidyverse
 R-vcdExtra

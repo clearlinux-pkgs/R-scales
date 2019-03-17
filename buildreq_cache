@@ -1,8 +1,10 @@
 1.0.0
 R-RColorBrewer
 R-Rcpp
+R-cli
 R-dichromat
 R-labeling
 R-munsell
 R-plyr
 R-viridisLite
+R-withr
