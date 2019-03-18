@@ -4,15 +4,14 @@
 #
 Name     : R-scales
 Version  : 1.0.0
-Release  : 66
+Release  : 67
 URL      : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Summary  : Tools for Splitting, Applying and Combining Data
 Group    : Development/Tools
 License  : MIT
 Requires: R-scales-lib = %{version}-%{release}
-Requires: R-cli
-Requires: R-withr
+Requires: R-rlang
 BuildRequires : R-RColorBrewer
 BuildRequires : R-Rcpp
 BuildRequires : R-cli
@@ -20,6 +19,7 @@ BuildRequires : R-dichromat
 BuildRequires : R-labeling
 BuildRequires : R-munsell
 BuildRequires : R-plyr
+BuildRequires : R-rlang
 BuildRequires : R-viridisLite
 BuildRequires : R-withr
 BuildRequires : buildreq-R
@@ -48,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552855824
+export SOURCE_DATE_EPOCH=1552946242
 
 %install
-export SOURCE_DATE_EPOCH=1552855824
+export SOURCE_DATE_EPOCH=1552946242
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
