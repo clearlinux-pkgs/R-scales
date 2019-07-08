@@ -4,33 +4,34 @@
 #
 Name     : R-scales
 Version  : 1.0.0
-Release  : 71
+Release  : 72
 URL      : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
-Summary  : Tools for Splitting, Applying and Combining Data
+Summary  : Scale Functions for Visualization
 Group    : Development/Tools
 License  : MIT
 Requires: R-scales-lib = %{version}-%{release}
-Requires: R-rlang
+Requires: R-R6
+Requires: R-RColorBrewer
+Requires: R-Rcpp
+Requires: R-dichromat
+Requires: R-labeling
+Requires: R-munsell
+Requires: R-plyr
+Requires: R-viridisLite
+BuildRequires : R-R6
 BuildRequires : R-RColorBrewer
 BuildRequires : R-Rcpp
-BuildRequires : R-cli
 BuildRequires : R-dichromat
 BuildRequires : R-labeling
 BuildRequires : R-munsell
 BuildRequires : R-plyr
-BuildRequires : R-rlang
 BuildRequires : R-viridisLite
-BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-# Scales <img src="man/figures/logo.png" align="right" />
-[![Build
-Status](https://travis-ci.org/r-lib/scales.svg?branch=master)](https://travis-ci.org/r-lib/scales)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/r-lib/scales/master.svg)](https://codecov.io/github/r-lib/scales?branch=master)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/scales)](https://cran.r-project.org/package=scales)
+methods for automatically determining breaks and labels
+    for axes and legends.
 
 %package lib
 Summary: lib components for the R-scales package.
@@ -47,13 +48,13 @@ lib components for the R-scales package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552946242
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562620317
 
 %install
-export SOURCE_DATE_EPOCH=1552946242
+export SOURCE_DATE_EPOCH=1562620317
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -82,12 +83,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  scales || :
+R CMD check --no-manual --no-examples --no-codoc scales || :
 
 
 %files
