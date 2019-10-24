@@ -4,20 +4,18 @@
 #
 Name     : R-scales
 Version  : 1.0.0
-Release  : 72
+Release  : 73
 URL      : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.0.0.tar.gz
-Summary  : Scale Functions for Visualization
+Summary  : Tools for Splitting, Applying and Combining Data
 Group    : Development/Tools
 License  : MIT
 Requires: R-scales-lib = %{version}-%{release}
 Requires: R-R6
 Requires: R-RColorBrewer
 Requires: R-Rcpp
-Requires: R-dichromat
 Requires: R-labeling
 Requires: R-munsell
-Requires: R-plyr
 Requires: R-viridisLite
 BuildRequires : R-R6
 BuildRequires : R-RColorBrewer
@@ -28,10 +26,15 @@ BuildRequires : R-munsell
 BuildRequires : R-plyr
 BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-methods for automatically determining breaks and labels
-    for axes and legends.
+# Scales <img src="man/figures/logo.png" align="right" />
+[![Build
+Status](https://travis-ci.org/r-lib/scales.svg?branch=master)](https://travis-ci.org/r-lib/scales)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/r-lib/scales/master.svg)](https://codecov.io/github/r-lib/scales?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/scales)](https://cran.r-project.org/package=scales)
 
 %package lib
 Summary: lib components for the R-scales package.
@@ -49,10 +52,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562620317
+export SOURCE_DATE_EPOCH=1571906601
 
 %install
-export SOURCE_DATE_EPOCH=1562620317
+export SOURCE_DATE_EPOCH=1571906601
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
