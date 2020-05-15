@@ -4,7 +4,7 @@
 #
 Name     : R-scales
 Version  : 1.1.1
-Release  : 78
+Release  : 79
 URL      : https://cran.r-project.org/src/contrib/scales_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.1.1.tar.gz
 Summary  : Scale Functions for Visualization
@@ -16,7 +16,6 @@ Requires: R-farver
 Requires: R-labeling
 Requires: R-lifecycle
 Requires: R-munsell
-Requires: R-plyr
 Requires: R-viridisLite
 BuildRequires : R-R6
 BuildRequires : R-RColorBrewer
@@ -24,7 +23,6 @@ BuildRequires : R-farver
 BuildRequires : R-labeling
 BuildRequires : R-lifecycle
 BuildRequires : R-munsell
-BuildRequires : R-plyr
 BuildRequires : R-viridisLite
 BuildRequires : buildreq-R
 
@@ -41,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589308321
+export SOURCE_DATE_EPOCH=1589585338
 
 %install
-export SOURCE_DATE_EPOCH=1589308321
+export SOURCE_DATE_EPOCH=1589585338
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
