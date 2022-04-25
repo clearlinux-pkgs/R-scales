@@ -4,7 +4,7 @@
 #
 Name     : R-scales
 Version  : 1.2.0
-Release  : 94
+Release  : 95
 URL      : https://cran.r-project.org/src/contrib/scales_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/scales_1.2.0.tar.gz
 Summary  : Scale Functions for Visualization
