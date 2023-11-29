@@ -2,7 +2,9 @@
 R-DiagrammeR
 R-GGally
 R-bridgesampling
+R-car
 R-cowplot
+R-dials
 R-distributional
 R-drc
 R-ggfortify
@@ -11,6 +13,8 @@ R-ggrepel
 R-ggridges
 R-kableExtra
 R-leaflet
+R-mixtools
 R-pheatmap
 R-plotly
+R-projpred
 R-remote
